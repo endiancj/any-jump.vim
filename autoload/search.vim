@@ -3,7 +3,7 @@
 let s:regexp_keyword_word = 'KEYWORD'
 let s:engines             = ['rg', 'ag']
 
-let s:rg_base_cmd = "rg -n --auto-hybrid-regex --json"
+let s:rg_base_cmd = "rg -n --pcre2 --engine auto --json --unicode"
 let s:ag_base_cmd = "ag --nogroup --noheading"
 
 let s:rg_filetype_convertion_map = {
@@ -39,6 +39,7 @@ let s:non_standard_ft_extensions_map = {
       \}
 
 let s:filetypes_comments_map = {
+      \"c":             ["//"],
       \"cpp":           ["//"],
       \"elisp":         [";"],
       \"commonlisp":    [";"],
